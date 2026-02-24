@@ -4,71 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مكتبة الموسيقى</title>
-    <!-- ربط ملف التصميم -->
     <link rel="stylesheet" href="style.css">
-    <!-- مكتبة أيقونات عشان نستخدم أيقونة الترس والتشغيل -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body class="theme-dark"> <!-- الثيم الافتراضي -->
 
-    <!-- الهيدر أو رأس الصفحة -->
     <header>
         <h1>مكتبتي الموسيقية</h1>
-        <div class="settings">
-            <i class="fa-solid fa-gear"></i>
+        <div class="settings-container">
+            <i id="settings-icon" class="fa-solid fa-gear"></i>
+            <!-- القائمة المنسدلة للثيمات (مخفية) -->
+            <div id="theme-menu" class="hidden">
+                <div class="theme-option" data-theme="theme-dark">الوضع الداكن</div>
+                <div class="theme-option" data-theme="theme-green">الأخضر والأسود</div>
+                <div class="theme-option" data-theme="theme-neon">النيون الفاخر</div>
+            </div>
         </div>
     </header>
 
-    <!-- المحتوى الرئيسي للصفحة -->
     <main>
-        <!-- قسم خاص بفنان مميز -->
-        <section class="featured-artist">
-            <img src="https://i.scdn.co/image/ab6761610000e5ebc580536e248476480dc3d1f0" alt="صورة الفنان NEFFEX">
-            <div class="artist-info">
-                <h2>NEFFEX</h2>
-                <p>موسيقى حماسية بدون حقوق ملكية لمشاريعك.</p>
-                <a href="#" class="artist-page-link">اذهب لصفحة الفنان</a>
+        <!-- قسم البحث -->
+        <section class="search-section">
+            <div class="search-bar">
+                <input type="text" placeholder="ابحث عن أغنية، فنان، ألبوم...">
+                <button><i class="fa-solid fa-search"></i></button>
             </div>
         </section>
 
-        <!-- قائمة الأغاني -->
+        <!-- قسم الفنانين -->
+        <section class="artists-section">
+            <h2>الفنانون</h2>
+            <div class="artists-grid">
+                <!-- بطاقة فنان -->
+                <div class="artist-card">
+                    <img src="https://i.scdn.co/image/ab6761610000e5ebc580536e248476480dc3d1f0" alt="NEFFEX">
+                    <h3>NEFFEX</h3>
+                </div>
+                <!-- بطاقة فنان -->
+                <div class="artist-card">
+                    <img src="https://i.ytimg.com/vi/b6_iR_s6O2M/maxresdefault.jpg" alt="فنان آخر">
+                    <h3>فنان تجريبي</h3>
+                </div>
+                <!-- بطاقة فنان -->
+                <div class="artist-card">
+                    <img src="https://i1.sndcdn.com/avatars-000332821214-41bx6w-t500x500.jpg" alt="فنان ثالث">
+                    <h3>فنان جديد</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- قائمة الأغاني (احدث الإضافات) -->
         <section class="song-list">
-            <h3>أحدث الإضافات</h3>
+            <h3>أحدث الأغاني</h3>
             <ul>
-                <li>
+                <!-- محتوى الأغاني زي ما هو -->
+                 <li>
                     <span class="song-title">Fight Back</span>
                     <div class="song-controls">
-                        <button class="play-btn"><i class="fa-solid fa-play"></i> تشغيل</button>
-                        <button class="download-btn"><i class="fa-solid fa-download"></i> تحميل</button>
+                        <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="download-btn"><i class="fa-solid fa-download"></i></button>
                     </div>
                 </li>
                 <li>
                     <span class="song-title">Destiny</span>
                     <div class="song-controls">
-                        <button class="play-btn"><i class="fa-solid fa-play"></i> تشغيل</button>
-                        <button class="download-btn"><i class="fa-solid fa-download"></i> تحميل</button>
-                    </div>
-                </li>
-                <li>
-                    <span class="song-title">Grateful</span>
-                    <div class="song-controls">
-                        <button class="play-btn"><i class="fa-solid fa-play"></i> تشغيل</button>
-                        <button class="download-btn"><i class="fa-solid fa-download"></i> تحميل</button>
+                        <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="download-btn"><i class="fa-solid fa-download"></i></button>
                     </div>
                 </li>
             </ul>
         </section>
     </main>
 
-    <!-- مشغل الموسيقى الثابت في الأسفل -->
     <footer>
         <div class="music-player">
             <span>اختر أغنية لتشغيلها</span>
-            <!-- عناصر التحكم في المشغل هتضاف هنا لاحقاً -->
         </div>
     </footer>
 
-    <!-- ربط ملف الجافاسكريبت -->
     <script src="app.js"></script>
 </body>
 </html>
