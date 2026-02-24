@@ -1,8 +1,40 @@
-// هذا الملف فارغ حاليًا
+// انتظر حتى يتم تحميل كل شيء في الصفحة
+document.addEventListener('DOMContentLoaded', () => {
 
-// في المستقبل، سنكتب هنا الأكواد التي:
-// 1. تجعل زر التشغيل يقوم بتشغيل الأغنية في المشغل بالأسفل.
-// 2. تجعل أيقونة الترس تفتح قائمة الإعدادات للتبديل بين التصميمات (النيون والعصري).
-// 3. تجعل زر التحميل يقوم بتحميل ملف الأغنية.
+    // --- منطق تبديل الثيمات ---
+    const settingsIcon = document.getElementById('settings-icon');
+    const themeMenu = document.getElementById('theme-menu');
+    const themeOptions = document.querySelectorAll('.theme-option');
+    const body = document.body;
 
-console.log("الموقع يعمل!");
+    // عند الضغط على أيقونة الترس
+    settingsIcon.addEventListener('click', () => {
+        // اظهر القائمة أو اخفيها
+        themeMenu.classList.toggle('hidden');
+    });
+
+    // عند اختيار ثيم من القائمة
+    themeOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const selectedTheme = option.getAttribute('data-theme');
+            
+            // قم بإزالة كل كلاسات الثيمات القديمة
+            body.classList.remove('theme-dark', 'theme-green', 'theme-neon');
+            
+            // أضف كلاس الثيم الجديد
+            body.classList.add(selectedTheme);
+            
+            // اخفي القائمة بعد الاختيار
+            themeMenu.classList.add('hidden');
+        });
+    });
+
+    // إخفاء قائمة الثيمات إذا تم الضغط في أي مكان آخر في الصفحة
+    document.addEventListener('click', (event) => {
+        if (!settingsIcon.contains(event.target) && !themeMenu.contains(event.target)) {
+            themeMenu.classList.add('hidden');
+        }
+    });
+
+    console.log("تم تحميل نظام الثيمات والأقسام الجديدة بنجاح!");
+});
