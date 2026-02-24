@@ -1,81 +1,129 @@
-/* إعدادات أساسية وتصميم دارك مود */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* CSS Variables for theming */
+:root {
+    --font-family: 'Tajawal', sans-serif;
 }
 
+/* 1. Dark Theme (Default) */
+.theme-dark {
+    --bg-color: #121212;
+    --surface-color: #1e1e1e;
+    --primary-color: #bb86fc;
+    --secondary-color: #03dac6;
+    --text-color: #e0e0e0;
+    --shadow-color: transparent;
+}
+
+/* 2. Green & Black Theme */
+.theme-green {
+    --bg-color: #000000;
+    --surface-color: #1a1a1a;
+    --primary-color: #2ecc71;
+    --secondary-color: #27ae60;
+    --text-color: #f5f5f5;
+    --shadow-color: transparent;
+}
+
+/* 3. Luxurious Neon Theme */
+.theme-neon {
+    --bg-color: #0d0221;
+    --surface-color: #261b47;
+    --primary-color: #ff00ff; /* Magenta */
+    --secondary-color: #00f2ff; /* Cyan */
+    --text-color: #f0f0f0;
+    --shadow-color: var(--primary-color);
+}
+
+/* --- General Styles --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    font-family: 'Tajawal', sans-serif; /* خط عربي جميل ممكن تستخدمه */
-    background-color: #121212;
-    color: #e0e0e0;
-    line-height: 1.6;
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* تنسيق الهيدر */
+/* --- Header & Settings Menu --- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background-color: #1f1f1f;
+    background-color: var(--surface-color);
     border-bottom: 1px solid #333;
 }
-
-header h1 {
-    font-size: 1.5rem;
-}
-
-header .settings i {
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-/* تنسيق المحتوى الرئيسي */
-main {
-    padding: 2rem 5%;
-}
-
-.featured-artist {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    background-color: #1f1f1f;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-}
-
-.featured-artist img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.artist-page-link {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #bb86fc;
-    color: #121212;
-    text-decoration: none;
+.settings-container { position: relative; }
+#settings-icon { font-size: 1.5rem; cursor: pointer; }
+#theme-menu {
+    position: absolute;
+    left: 0;
+    top: 150%;
+    background-color: var(--surface-color);
+    border: 1px solid #333;
     border-radius: 5px;
-    font-weight: bold;
+    width: 150px;
+    z-index: 10;
+    overflow: hidden;
+}
+.theme-option {
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.theme-option:hover { background-color: rgba(255, 255, 255, 0.1); }
+.hidden { display: none; }
+
+/* --- Search Section --- */
+.search-section { padding: 2rem 5%; }
+.search-bar {
+    display: flex;
+    border: 1px solid #555;
+    border-radius: 50px;
+    overflow: hidden;
+    background-color: var(--surface-color);
+    box-shadow: 0 0 15px var(--shadow-color);
+}
+.search-bar input {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    padding: 1rem 1.5rem;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+.search-bar input:focus { outline: none; }
+.search-bar button {
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 0 1.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
 }
 
-/* تنسيق قائمة الأغاني */
-.song-list h3 {
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #bb86fc;
-    padding-bottom: 0.5rem;
-    display: inline-block;
+/* --- Artists Section --- */
+.artists-section { padding: 0 5% 2rem; }
+.artists-section h2 { margin-bottom: 1rem; }
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
 }
-
-.song-list ul {
-    list-style: none;
+.artist-card {
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
+.artist-card:hover { transform: translateY(-5px); }
+.artist-card img { width: 100%; height: 150px; object-fit: cover; }
+.artist-card h3 { padding: 1rem; }
 
+/* --- Song List Section --- */
+.song-list { padding: 0 5% 2rem; }
+.song-list h3 { margin-bottom: 1rem; }
+.song-list ul { list-style: none; }
 .song-list li {
     display: flex;
     justify-content: space-between;
@@ -84,43 +132,31 @@ main {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
-
-.song-list li:hover {
-    background-color: #2a2a2a;
-}
-
-.song-list .song-title {
-    font-weight: bold;
-}
-
-/* تنسيق الأزرار */
-.play-btn, .download-btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
+.song-list li:hover { background-color: var(--surface-color); }
+.song-controls button {
+    background: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     cursor: pointer;
-    font-weight: bold;
     margin-left: 0.5rem;
+    transition: background-color 0.2s, color 0.2s;
+    text-shadow: 0 0 8px var(--shadow-color);
+}
+.song-controls button:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
 }
 
-.play-btn {
-    background-color: #03dac6;
-    color: #121212;
-}
-
-.download-btn {
-    background-color: transparent;
-    color: #03dac6;
-    border: 1px solid #03dac6;
-}
-
-/* تنسيق مشغل الموسيقى الثابت */
+/* --- Footer Player --- */
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #1f1f1f;
+    background-color: var(--surface-color);
     padding: 1rem;
     text-align: center;
     border-top: 1px solid #333;
