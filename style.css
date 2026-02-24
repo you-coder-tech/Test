@@ -101,3 +101,12 @@ footer {
     font-size: 3rem;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
+
+
+
+
+
+.artist-card-link {
+    text-decoration: none;
+    color: inherit;
+}
