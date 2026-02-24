@@ -1,87 +1,47 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتبة الموسيقى</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body class="theme-dark"> <!-- الثيم الافتراضي -->
-
-    <header>
-        <h1>مكتبتي الموسيقية</h1>
-        <div class="settings-container">
-            <i id="settings-icon" class="fa-solid fa-gear"></i>
-            <!-- القائمة المنسدلة للثيمات (مخفية) -->
-            <div id="theme-menu" class="hidden">
-                <div class="theme-option" data-theme="theme-dark">الوضع الداكن</div>
-                <div class="theme-option" data-theme="theme-green">الأخضر والأسود</div>
-                <div class="theme-option" data-theme="theme-neon">النيون الفاخر</div>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <!-- قسم البحث -->
-        <section class="search-section">
-            <div class="search-bar">
-                <input type="text" placeholder="ابحث عن أغنية، فنان، ألبوم...">
-                <button><i class="fa-solid fa-search"></i></button>
-            </div>
-        </section>
+<!-- ... (نفس الكود اللي فوق) ... -->
 
         <!-- قسم الفنانين -->
         <section class="artists-section">
             <h2>الفنانون</h2>
             <div class="artists-grid">
-                <!-- بطاقة فنان -->
+                <!-- بطاقة فنان NEFFEX (استخدمنا الصورة اللي اخترتها) -->
                 <div class="artist-card">
-                    <img src="https://i.scdn.co/image/ab6761610000e5ebc580536e248476480dc3d1f0" alt="NEFFEX">
+                    <img src="images/neffex-studio.jpeg" alt="NEFFEX">
                     <h3>NEFFEX</h3>
                 </div>
-                <!-- بطاقة فنان -->
+                <!-- بطاقة فنان (استخدمنا الصورة التانية كمثال) -->
                 <div class="artist-card">
-                    <img src="https://i.ytimg.com/vi/b6_iR_s6O2M/maxresdefault.jpg" alt="فنان آخر">
-                    <h3>فنان تجريبي</h3>
+                    <img src="images/neffex-live.jpeg" alt="فنان آخر">
+                    <h3>NEFFEX Live</h3>
                 </div>
-                <!-- بطاقة فنان -->
+                <!-- بطاقة فنان (استخدمنا الصورة التالتة كمثال) -->
                 <div class="artist-card">
-                    <img src="https://i1.sndcdn.com/avatars-000332821214-41bx6w-t500x500.jpg" alt="فنان ثالث">
-                    <h3>فنان جديد</h3>
+                    <img src="images/neffex-closeup.jpeg" alt="فنان ثالث">
+                    <h3>NEFFEX Profile</h3>
                 </div>
             </div>
         </section>
+        
+<!-- ... (باقي الكود زي ما هو لحد ما نوصل للـ footer) ... -->
 
-        <!-- قائمة الأغاني (احدث الإضافات) -->
-        <section class="song-list">
-            <h3>أحدث الأغاني</h3>
-            <ul>
-                <!-- محتوى الأغاني زي ما هو -->
-                 <li>
-                    <span class="song-title">Fight Back</span>
-                    <div class="song-controls">
-                        <button class="play-btn"><i class="fa-solid fa-play"></i></button>
-                        <button class="download-btn"><i class="fa-solid fa-download"></i></button>
-                    </div>
-                </li>
-                <li>
-                    <span class="song-title">Destiny</span>
-                    <div class="song-controls">
-                        <button class="play-btn"><i class="fa-solid fa-play"></i></button>
-                        <button class="download-btn"><i class="fa-solid fa-download"></i></button>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    </main>
-
+    <!-- مشغل الموسيقى بقى موجود جوه الـ footer مباشرة -->
     <footer>
         <div class="music-player">
-            <span>اختر أغنية لتشغيلها</span>
+            <div class="song-info">
+                <span class="current-song-title">اختر أغنية لتشغيلها</span>
+                <span class="current-song-artist"></span>
+            </div>
+            <div class="player-controls">
+                <!-- هنا هنحط أزرار التشغيل والإيقاف والتالي والسابق -->
+                <i class="fa-solid fa-backward-step"></i>
+                <i class="fa-solid fa-circle-play" id="main-play-btn"></i>
+                <i class="fa-solid fa-forward-step"></i>
+            </div>
+            <div class="progress-bar-container">
+                <!-- شريط تقدم الأغنية -->
+                <div class="progress-bar"></div>
+            </div>
         </div>
     </footer>
 
-    <script src="app.js"></script>
-</body>
-</html>
+<!-- ... (نفس الكود اللي تحت) ... -->
