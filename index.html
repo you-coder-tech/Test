@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة الموسيقى</title>
+    <!-- ربط ملف التصميم -->
+    <link rel="stylesheet" href="style.css">
+    <!-- مكتبة أيقونات عشان نستخدم أيقونة الترس والتشغيل -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- الهيدر أو رأس الصفحة -->
+    <header>
+        <h1>مكتبتي الموسيقية</h1>
+        <div class="settings">
+            <i class="fa-solid fa-gear"></i>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي للصفحة -->
+    <main>
+        <!-- قسم خاص بفنان مميز -->
+        <section class="featured-artist">
+            <img src="https://i.scdn.co/image/ab6761610000e5ebc580536e248476480dc3d1f0" alt="صورة الفنان NEFFEX">
+            <div class="artist-info">
+                <h2>NEFFEX</h2>
+                <p>موسيقى حماسية بدون حقوق ملكية لمشاريعك.</p>
+                <a href="#" class="artist-page-link">اذهب لصفحة الفنان</a>
+            </div>
+        </section>
+
+        <!-- قائمة الأغاني -->
+        <section class="song-list">
+            <h3>أحدث الإضافات</h3>
+            <ul>
+                <li>
+                    <span class="song-title">Fight Back</span>
+                    <div class="song-controls">
+                        <button class="play-btn"><i class="fa-solid fa-play"></i> تشغيل</button>
+                        <button class="download-btn"><i class="fa-solid fa-download"></i> تحميل</button>
+                    </div>
+                </li>
+                <li>
+                    <span class="song-title">Destiny</span>
+                    <div class="song-controls">
+                        <button class="play-btn"><i class="fa-solid fa-play"></i> تشغيل</button>
+                        <button class="download-btn"><i class="fa-solid fa-download"></i> تحميل</button>
+                    </div>
+                </li>
+                <li>
+                    <span class="song-title">Grateful</span>
+                    <div class="song-controls">
+                        <button class="play-btn"><i class="fa-solid fa-play"></i> تشغيل</button>
+                        <button class="download-btn"><i class="fa-solid fa-download"></i> تحميل</button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- مشغل الموسيقى الثابت في الأسفل -->
+    <footer>
+        <div class="music-player">
+            <span>اختر أغنية لتشغيلها</span>
+            <!-- عناصر التحكم في المشغل هتضاف هنا لاحقاً -->
+        </div>
+    </footer>
+
+    <!-- ربط ملف الجافاسكريبت -->
+    <script src="app.js"></script>
+</body>
+</html>
