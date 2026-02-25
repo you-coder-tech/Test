@@ -218,3 +218,33 @@ input[type=range]::-webkit-slider-thumb { height: 15px; width: 15px; border-radi
         height: 22px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Drag Over Visual Feedback --- */
+.playlist-container.drag-over {
+    /* لما تسحب ملف فوق المنطقة، هيظهر خط متقطع بلون مختلف */
+    border-right-color: var(--accent-color);
+    box-shadow: inset 0 0 25px var(--glow-color);
+    background-color: rgba(29,17,53,1);
+}
